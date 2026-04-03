@@ -59,7 +59,7 @@ export async function POST(request: Request) {
   const { firstName, lastName, email, phone, company, jobTitle, notes } =
     body as Record<string, unknown>;
 
-  if (!firstName || typeof firstName !== "string" || !firstName.trim()) {
+  if (!firstName || typeof firstName !== "string" || firstName.trim() === "") {
     return NextResponse.json(
       { error: "First name is required" },
       { status: 400 }

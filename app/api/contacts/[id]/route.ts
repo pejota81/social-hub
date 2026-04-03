@@ -55,7 +55,7 @@ export async function PATCH(
   const { firstName, lastName, email, phone, company, jobTitle, notes } =
     body as Record<string, unknown>;
 
-  if (firstName !== undefined && (typeof firstName !== "string" || !firstName.trim())) {
+  if (firstName !== undefined && (typeof firstName !== "string" || firstName.trim() === "")) {
     return NextResponse.json(
       { error: "firstName must be a non-empty string" },
       { status: 400 }

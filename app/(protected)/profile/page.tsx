@@ -101,7 +101,7 @@ export default function ProfilePage() {
               />
             ) : (
               <div className="w-20 h-20 rounded-full border-4 border-white shadow-md bg-indigo-100 flex items-center justify-center text-2xl font-bold text-indigo-600">
-                {(profile.name ?? profile.email ?? "?")[0].toUpperCase()}
+                {((profile.name ?? profile.email ?? "?") || "?")[0].toUpperCase()}
               </div>
             )}
           </div>
